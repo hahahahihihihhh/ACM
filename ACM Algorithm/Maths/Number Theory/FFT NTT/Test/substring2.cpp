@@ -1,5 +1,5 @@
 /*
-    atcoder abc196 F_Substring-2
+    Atcoder abc196 F_Substring-2
 */
 #include <bits/stdc++.h>
 

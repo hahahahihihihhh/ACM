@@ -1,5 +1,5 @@
 /*
-    atcoder abc199 F_Graph-Smoothing
+    Atcoder abc199 F_Graph-Smoothing
 */
 #include <bits/stdc++.h>
 

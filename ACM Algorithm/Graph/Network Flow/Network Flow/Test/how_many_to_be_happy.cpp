@@ -1,5 +1,5 @@
 /*
-    牛客 2021年度训练联盟热身训练赛第四场E How Many to Be Happy?
+    牛客 2021年度训练联盟热身训练赛第四场 E_How-Many-to-Be-Happy?
 */
 #include <bits/stdc++.h>
 

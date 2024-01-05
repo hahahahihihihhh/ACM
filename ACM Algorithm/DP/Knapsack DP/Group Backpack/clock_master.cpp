@@ -1,5 +1,5 @@
 /*
-    codeforces 2020-CCPC-Weihai L_Clock-Master
+    Codeforces 2020-CCPC-Weihai L_Clock-Master
 */
 #include <bits/stdc++.h>
 

@@ -1,5 +1,5 @@
 /*
-    codeforces 2020-ICPC-Asia-East-Continent-Final A_Namomo-Subsequence
+    Codeforces 2020-ICPC-Asia-East-Continent-Final A_Namomo-Subsequence
 */
 #include <bits/stdc++.h>
 

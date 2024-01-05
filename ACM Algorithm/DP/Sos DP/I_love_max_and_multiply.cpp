@@ -1,5 +1,5 @@
 /*
-    hdu 2021“MINIEYE杯”中国大学生算法设计超级联赛2 K_I-love-max-and-multiply（SOSdp/父集/子集dp）
+    hdu 2021"MINIEYE杯"中国大学生算法设计超级联赛2 K_I-love-max-and-multiply（SOSdp/父集/子集dp）
 */
 #include <bits/stdc++.h>
 
