@@ -1,5 +1,5 @@
 /*
-    P5960 【模板】差分约束算法（Bellman_Ford实现 O(n*m)，常数小）
+    洛谷 P5960 【模板】差分约束算法（Bellman_Ford实现 O(n*m)，常数小）
 */
 #include <bits/stdc++.h>
 

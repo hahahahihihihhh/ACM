@@ -1,5 +1,5 @@
 /*
-    atcoder ZONe-Energy-Programming-Contest E_Sneaking
+    Atcoder ZONe-Energy-Programming-Contest E_Sneaking
 */
 #include <bits/stdc++.h>
 
