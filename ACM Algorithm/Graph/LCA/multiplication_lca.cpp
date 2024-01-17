@@ -22,6 +22,7 @@ struct ML {
         Edge[tot].nxt = head[x];
         head[x] = tot;
     }
+
     void dfs(int u, int fa) {  //求每个点的深度，并打f表
         //前序遍历
         dep[u] = dep[fa] + 1;
@@ -36,7 +37,9 @@ struct ML {
             dfs(v, u);
         }
     }
+
     void init(int s) { dfs(s, 0); }
+
     int lca(int x, int y) {
         if (dep[x] < dep[y])
             swap(x, y);

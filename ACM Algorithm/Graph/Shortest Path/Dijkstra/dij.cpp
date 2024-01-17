@@ -14,10 +14,12 @@ struct Dij {
     struct Node {
         int to;
         ll w;
+
         bool operator<(const Node &x) const {
             return w > x.w;
         }
     };
+
     struct Edge {
         int to;
         ll w;
@@ -33,12 +35,14 @@ struct Dij {
         edge[tot].nxt = head[u];
         head[u] = tot;
     }
+
     inline void init(int n) {
         tot = 1;
 
         for (int i = 1; i <= n; i++)
             head[i] = vis[i] = 0, dis[i] = INF;
     }
+
     inline void dij(int st) {
         priority_queue<Node> q;
         q.push({st, 0});

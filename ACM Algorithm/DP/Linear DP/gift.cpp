@@ -12,15 +12,16 @@ const int D = 370; // 天数
 const int INF = 0x3f3f3f3f;
 
 namespace io {
-const int L = (1 << 22) | 1;
-char ibuf[L], *iS, *iT, c;
+    const int L = (1 << 22) | 1;
+    char ibuf[L], *iS, *iT, c;
 #define gc() (iS == iT ? (iT = (iS = ibuf) + fread(ibuf, 1, L, stdin), (iS == iT ? EOF : *iS++)) : *iS++)
-template<class I>
-inline void gi(I &x) {
-    for (c = gc(); c < '0' || c > '9'; c = gc());
-    for (x = 0; c >= '0' && c <= '9'; c = gc())
-        x = x * 10 + (c & 15);
-}
+
+    template<class I>
+    inline void gi(I &x) {
+        for (c = gc(); c < '0' || c > '9'; c = gc());
+        for (x = 0; c >= '0' && c <= '9'; c = gc())
+            x = x * 10 + (c & 15);
+    }
 }
 using io::gi;
 
@@ -28,6 +29,7 @@ struct Per {
     int bir;
     int cday;
     int imp;
+
     bool operator<(const Per &x) const {
         return bir < x.bir;
     }

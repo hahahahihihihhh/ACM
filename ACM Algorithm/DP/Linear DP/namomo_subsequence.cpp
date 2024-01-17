@@ -62,7 +62,7 @@ inline void solve() {
     for (int i = 1; i <= len; i++) {
         for (int j = 0; j <= lim; j++) {
             ll t = ((sumdif - tj_x[num[i]] - tj_x[j] - tjx_[num[i]] - tjx_[j] + 4LL * MOD) % MOD
-                + tj5[j][num[i]] + tj5[num[i]][j]) % MOD;
+                    + tj5[j][num[i]] + tj5[num[i]][j]) % MOD;
             ans += dp3[i][j] * t;
             ans %= MOD;
         }

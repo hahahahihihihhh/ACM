@@ -26,6 +26,7 @@ struct SPFA {
         edge[tot].nxt = head[u];
         head[u] = tot;
     }
+
     void init(int _n) {
         n = _n;
         tot = 1;
@@ -33,6 +34,7 @@ struct SPFA {
         for (int i = 1; i <= n; i++)
             dis[i] = INF, inq[i] = circle[i] = head[i] = 0;
     }
+
     bool spfa(int st) {        //  spfa的队列优化算法，注：可以有负权，判负环，数据量大时比dij慢
         queue<int> q;
         dis[st] = 0;

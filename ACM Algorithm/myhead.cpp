@@ -1,7 +1,7 @@
 #pragma GCC optimize(2)
 #pragma GCC optimize("Ofast,unroll-loops")
 #pragma GCC target("sse,sse2,avx,avx2")
-//#pragma comment(linker, "/STACK:102400000,102400000") ÊÖ¶¯À©Õ»
+//#pragma comment(linker, "/STACK:102400000,102400000") ï¿½Ö¶ï¿½ï¿½ï¿½Õ»
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -13,26 +13,32 @@ typedef double db;
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 typedef set<int>::iterator iit;
+
 template<typename T>
 inline T abs(T x) {
     return x > 0 ? x : -x;
 }
+
 template<typename T>
 inline T sqr(T x) {
     return x * x;
 }
+
 template<typename T>
 inline T max(T a, T b, T c) {
     return max(max(a, b), c);
 }
+
 template<typename T>
 inline T min(T a, T b, T c) {
     return min(min(a, b), c);
 }
+
 template<typename T>
 inline T gcd(T a, T b) {
     return b ? gcd(b, a % b) : a;
 }
+
 template<typename T, typename T1>
 inline T qpower(T x, T p, T1 mod) {
     T re = 1;
@@ -45,10 +51,12 @@ inline T qpower(T x, T p, T1 mod) {
     }
     return re;
 }
+
 template<typename T1, typename T2>
 inline T1 power(T1 x, T2 p) {
     return x < 0 && p < 1 && -1 < p ? p != 0 ? -pow(-x, p) : 1 : pow(x, p);
 }
+
 inline bool mr(ll x, ll b) {
     ll k = x - 1;
     while (k) {
@@ -61,6 +69,7 @@ inline bool mr(ll x, ll b) {
     }
     return true;
 }
+
 inline bool isprime(ll x) {
     if (x == 46856248255981ll || x < 2)
         return false;
@@ -68,6 +77,7 @@ inline bool isprime(ll x) {
         return true;
     return mr(x, 2) && mr(x, 61);
 }
+
 // char buf[1 << 21], *p1=buf, *p2=buf;
 // inline int getc(){return p1 == p2 && (p2 = (p1 = buf) + fread(buf, 1, 1 << 21, stdin), p1 == p2) ? EOF :
 // *p1++;}
@@ -85,6 +95,7 @@ inline void read(T &res) {
     if (f)
         res = -res;
 }
+
 template<typename T>
 inline void write(T x) {
     if (x < 0)
@@ -93,6 +104,7 @@ inline void write(T x) {
         write(x / 10);
     putchar(x % 10 ^ 48);
 }
+
 const double PI = acos(-1);
 const double e = 2.718281828459;
 const ll MOD = 1000000007;
@@ -108,12 +120,15 @@ const int INF = 0x3f3f3f3f;
     cout.setf(ios_base::fixed, ios_base::floatfield); \
     cout.precision((X))
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
+
 void debug_out() { cerr << endl; }
+
 template<typename Head, typename... Tail>
 void debug_out(Head H, Tail... T) {
     cerr << " " << to_string(H);
     debug_out(T...);
 }
+
 #define writln(X) write(X), putchar('\n')
 #define writsp(X) write(X), putchar(' ')
 #define closeSync            \

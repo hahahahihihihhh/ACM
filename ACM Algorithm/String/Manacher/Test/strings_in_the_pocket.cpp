@@ -10,6 +10,7 @@ const int MAXN = 2000005;
 typedef long long ll;
 
 int r[MAXN << 1];
+
 inline void manacher(string str) {
     string tmp = " ?#";
     int ed = str.size() - 1;

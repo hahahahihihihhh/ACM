@@ -32,6 +32,7 @@ inline ll ask_invv(ll a) {
     //快速幂 求逆元
     return qpower(a, MOD - 2, MOD);
 }
+
 inline void build_facInv(int n) {
     //批量求逆：线性递推求阶乘逆元 1! —— n!
     fac[0] = fac[1] = 1LL;
@@ -47,6 +48,7 @@ inline void build_facInv(int n) {
 
     return;
 }
+
 inline void build_inv(int n) {
     //批量求逆：线性递推求逆元 1 —— min(MOD-1,n)（此方法仅适用于模数为素数的情况）
     inv[1] = 1LL;

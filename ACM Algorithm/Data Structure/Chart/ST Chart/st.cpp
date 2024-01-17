@@ -33,6 +33,7 @@ struct ST {
             }
         }
     }
+
     int search(int x, int y, int id) { //查询区间[x,y]中 最小值/最大值 0/1    O(1)
         int len = (y - x + 1);
         int t = LOG2[len];

@@ -40,16 +40,19 @@ struct TL {
         node[tot1].nxt = head1[x];
         head1[x] = tot1;
     }
+
     inline void add_query(int x, int y, int i) {
         query[++tot2].to = y;
         query[tot2].nxt = head2[x];
         head2[x] = tot2;
         query[tot2].num = i; //第i次询问
     }
+
     //并查集
     int tfind(int x) {
         return fa[x] == x ? x : fa[x] = tfind(fa[x]);
     }
+
     inline void tunion(int x, int y) {
         fa[tfind(x)] = tfind(y);
     }

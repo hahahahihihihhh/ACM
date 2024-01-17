@@ -23,6 +23,7 @@ inline void init(int n) {
 
     R[t] = n;
 }
+
 inline void change(int l, int r, ll c) {
     int p = bl[l], q = bl[r];
 
@@ -44,6 +45,7 @@ inline void change(int l, int r, ll c) {
 
     return;
 }
+
 inline ll query(int x) {
     return a[x] + add[bl[x]];
 }

@@ -36,7 +36,7 @@ inline void dij(int st) {
         if (vis[u]) continue;
         vis[u] = 1;
 
-        for (auto c : G[u]) {
+        for (auto c: G[u]) {
             int v = c.second;
             ll w = c.first;
             if (dis[v] > dis[u] + w) {

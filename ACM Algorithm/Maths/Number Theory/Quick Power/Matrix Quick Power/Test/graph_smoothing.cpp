@@ -13,15 +13,18 @@ const int MAXN = 105;
 int n, m, k;
 ll A[MAXN], B[MAXN], down = 1;
 ll mp[MAXN][MAXN];
+
 struct Mat {
     ll a[MAXN][MAXN];
     int n;
+
     Mat(int _n = 0) {
         n = _n;
         for (int i = 1; i <= n; i++)
             for (int j = 1; j <= n; j++)
                 a[i][j] = 0;
     }
+
     Mat operator*(const Mat &x) const {
         Mat res(n);
         for (int i = 1; i <= n; i++)
@@ -30,6 +33,7 @@ struct Mat {
                     res.a[i][j] += a[i][k] * x.a[k][j], res.a[i][j] %= MOD;
         return res;
     }
+
     void ones() {
         for (int i = 1; i <= n; i++) a[i][i] = 1;
     }

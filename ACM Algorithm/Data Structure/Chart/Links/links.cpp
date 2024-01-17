@@ -11,13 +11,16 @@ struct Node {
     int data;
     Node *pre;
     Node *nex;
+
     Node(int data = -1, Node *pre = NULL, Node *nex = NULL)
-        : data(data), pre(pre), nex(nex) {}
+            : data(data), pre(pre), nex(nex) {}
 };
+
 void link(Node *a, Node *b) {
     a->nex = b;
     b->pre = a;
 }
+
 void delink(Node *a, Node *b) {
     a->nex = NULL;
     b->pre = NULL;

@@ -10,24 +10,31 @@ const int MAXN = 100005;
 
 struct Point {  //点、向量
     ld x, y;
+
     Point() {}
+
     Point(ld _x, ld _y) { // 读入点
         x = _x;
         y = _y;
     }
+
     void input() {  //读入一个点
         cin >> x >> y;
     }
+
     ld operator^(const Point &b) const {  //叉乘
         return x * b.y - y * b.x;
     }
+
     Point operator-(const Point &b) const {  //返回减去后的新点
         return Point(x - b.x, y - b.y);
     }
+
     ld distance(Point &p) {  //返回两点间的距离
         return hypot(x - p.x, y - p.y);
     }
 } point[MAXN];
+
 Point st;
 
 inline bool cmp1(const Point &a, const Point &b) {
@@ -36,12 +43,14 @@ inline bool cmp1(const Point &a, const Point &b) {
 
     return a.y < b.y;
 }
+
 bool cmp2(Point &a, Point &b) {
     if (atan2(a.y - st.y, a.x - st.x) == atan2(b.y - st.y, b.x - st.x))
         return a.distance(st) < b.distance(st);
 
     return atan2(a.y - st.y, a.x - st.x) < atan2(b.y - st.y, b.x - st.x);
 }
+
 struct CH {
     int cnt = 0, n;
     Point stk[MAXN];
@@ -49,9 +58,11 @@ struct CH {
     inline void init(int _n) {
         n = _n, cnt = 0;
     }
+
     inline ld cross(const Point &a, const Point &b, const Point &c) {
         return (b - a) ^ (c - a);
     }
+
     inline ld convex_hull_per() {   // 求凸包周长
         if (n == 1)
             return 0;

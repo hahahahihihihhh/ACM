@@ -16,6 +16,7 @@ struct Line {
         return x < a.x;
     }
 } line[MAXN];
+
 struct Node {
     ll l, r;
     int cover;  //覆盖次数
@@ -31,6 +32,7 @@ inline void pushup(int rt) {
     else
         node[rt].len = node[ls].len + node[rs].len; //没有覆盖了，儿子线段的覆盖顶替
 }
+
 void build(int l, int r, int rt = 1) {
     node[rt].l = v[l], node[rt].r = v[r]; //表示该节点所表示线段的起始点，终到点
 
@@ -44,6 +46,7 @@ void build(int l, int r, int rt = 1) {
     build(mid, r, rs);      //不留空隙
     return;
 }
+
 void modify(int l, int r, int x, int rt = 1) {
     if (l <= node[rt].l && node[rt].r <= r) {
         node[rt].cover += x;

@@ -12,6 +12,7 @@ const int MAXN = 10000005;
 	扩展欧拉定理 x<eular(mod) x%=eular(mod) else x=eular(mod)+x%eular(mod);
 */
 int p[MAXN], np[MAXN], phi[MAXN], cnt = 0;
+
 inline void init() {
     // 筛出1-n内所有数的欧拉函数
     int n = MAXN - 2;
@@ -33,6 +34,7 @@ inline void init() {
         }
     }
 }
+
 inline ll getPhi(ll x) {
     // 获得x的欧拉函数
     ll ans = x;
@@ -51,6 +53,7 @@ inline ll getPhi(ll x) {
 
     return ans;
 }
+
 inline ll getPhi2(ll x) {
     // 需要事先筛出根号x内的质数
     ll ans = 1;
@@ -75,6 +78,7 @@ inline ll getPhi2(ll x) {
 
     return ans;
 }
+
 inline ll qpower(ll x, ll p, ll mod) {
     ll res = 1;
 
