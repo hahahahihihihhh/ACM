@@ -5,23 +5,23 @@
 
 using namespace std;
 
-const int MAXN1 = 100005;
-const int MAXN2 = 18;  // log2(MAXN1)
+const int MAXN = 100005;
+const int LIM = 18;  // log2(MAXN)
 
 struct ST {
-    int a[MAXN1];
-    int st[MAXN1][MAXN2][2];    // 0 / 1 最小值，最大值
-    int LOG2[MAXN1], POW2[MAXN1];
+    int a[MAXN];
+    int st[MAXN][LIM][2];    // 0 / 1 最小值，最大值
+    int LOG2[MAXN], POW2[MAXN];
 
     void init(int n) { //初始化st表 O(NlognN)
 
         for (int i = 2; i <= n; i++)
             LOG2[i] = LOG2[i >> 1] + 1;
 
-        POW2[0] = 1LL;
+        POW2[0] = 1;
 
-        for (int i = 1; i <= MAXN2; i++)
-            POW2[i] = POW2[i - 1] * 2LL;
+        for (int i = 1; i <= LIM; i++)
+            POW2[i] = POW2[i - 1] * 2;
 
         for (int i = 1; i <= n; i++)
             st[i][0][0] = st[i][0][1] = a[i];
