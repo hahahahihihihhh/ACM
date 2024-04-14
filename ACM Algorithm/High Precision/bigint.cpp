@@ -11,6 +11,7 @@ const int base_digits = 9;
 struct bigint {
     vector<int> a;
     int sign;
+
     /*<arpa>*/
     int size() {
         if (a.empty())
@@ -24,6 +25,7 @@ struct bigint {
 
         return ans;
     }
+
     bigint operator^(const bigint &v) {
         bigint ans = 1, a = *this, b = v;
 
@@ -36,6 +38,7 @@ struct bigint {
 
         return ans;
     }
+
     string to_string() {
         stringstream ss;
         ss << *this;
@@ -43,18 +46,20 @@ struct bigint {
         ss >> s;
         return s;
     }
+
     int sumof() {
         string s = to_string();
         int ans = 0;
 
-        for (auto c : s)
+        for (auto c: s)
             ans += c - '0';
 
         return ans;
     }
+
     /*</arpa>*/
     bigint() :
-        sign(1) {
+            sign(1) {
     }
 
     bigint(long long v) {
@@ -246,12 +251,15 @@ struct bigint {
     void operator+=(const bigint &v) {
         *this = *this + v;
     }
+
     void operator-=(const bigint &v) {
         *this = *this - v;
     }
+
     void operator*=(const bigint &v) {
         *this = *this * v;
     }
+
     void operator/=(const bigint &v) {
         *this = *this / v;
     }
@@ -273,15 +281,19 @@ struct bigint {
     bool operator>(const bigint &v) const {
         return v < *this;
     }
+
     bool operator<=(const bigint &v) const {
         return !(v < *this);
     }
+
     bool operator>=(const bigint &v) const {
         return !(*this < v);
     }
+
     bool operator==(const bigint &v) const {
         return !(*this < v) && !(v < *this);
     }
+
     bool operator!=(const bigint &v) const {
         return *this < v || v < *this;
     }
@@ -322,6 +334,7 @@ struct bigint {
     friend bigint gcd(const bigint &a, const bigint &b) {
         return b.isZero() ? a : gcd(b, a % b);
     }
+
     friend bigint lcm(const bigint &a, const bigint &b) {
         return a / gcd(a, b) * b;
     }

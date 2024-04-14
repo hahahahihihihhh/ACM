@@ -16,7 +16,7 @@ int tme, root = 1, sons;
 
 void dfs0(int u) {
     siz[u] = 1;
-    for (auto v : G[u]) {
+    for (auto v: G[u]) {
         if (siz[v]) continue;
         if (u == root) sons++;
         dfs0(v);
@@ -28,7 +28,7 @@ void dfs(int u, int fa = 0) {
     dfn[u] = low[u] = ++tme;
     ans[u] = siz[root] - 1;
     int tmp = 0;
-    for (auto v : G[u]) {
+    for (auto v: G[u]) {
         if (v == fa) continue;
         if (!dfn[v]) {
             dfs(v, u);

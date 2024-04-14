@@ -34,6 +34,7 @@ struct AC {
 
         tot = 0;
     }
+
     inline void insert(string s) {
         // 字典树中插入字符串
         int len = s.size();
@@ -50,6 +51,7 @@ struct AC {
 
         t[now].endstr = s;
     }
+
     inline void get_fail() {
         // 建 fail 边
         queue<int> q;
@@ -72,6 +74,7 @@ struct AC {
             }
         }
     }
+
     inline void tpsort() {
         // 拓扑排序跑 fail 边
         queue<int> q;
@@ -95,6 +98,7 @@ struct AC {
                 q.push(v);
         }
     }
+
     inline void ac_query(string s) {    // 询问 s 串在各模式串中出现的次数，答案存在 mp 中
         int len = s.size();
         int now = 0;
@@ -126,7 +130,7 @@ int main() {
     cin >> ans;
     fff.ac_query(ans);
 
-    for (auto c : v)
+    for (auto c: v)
         cout << fff.mp[c] << endl;
 
     return 0;

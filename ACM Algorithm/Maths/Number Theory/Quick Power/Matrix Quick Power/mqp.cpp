@@ -13,17 +13,20 @@ ll n, k; // n阶 下的矩阵
 
 struct Matrix {
     ll a[MAXN][MAXN];
+
     Matrix() {
         for (int i = 1; i <= n; i++)
             for (int j = 1; j <= n; j++)
                 a[i][j] = 0;
     }
+
     void identity() {
         //获得n阶单位矩阵
         for (int i = 1; i <= n; i++)
             for (int j = 1; j <= n; j++)
                 a[i][j] = i == j ? 1 : 0;
     }
+
     Matrix operator*(const Matrix &x) const {
         Matrix res;
 
@@ -34,6 +37,7 @@ struct Matrix {
 
         return res;
     }
+
     friend ostream &operator<<(ostream &out, const Matrix &x) {
         for (int i = 1; i <= n; i++)
             for (int j = 1; j <= n; j++)
@@ -42,6 +46,7 @@ struct Matrix {
         return out;
     }
 };
+
 Matrix mpower(Matrix x, ll p) {
     Matrix res;
     res.identity();

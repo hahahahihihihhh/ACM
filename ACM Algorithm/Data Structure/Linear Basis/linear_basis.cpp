@@ -10,6 +10,7 @@ const int LIM = 60;
 typedef long long ll;
 
 ll S[MAXN];
+
 struct LB {
     ll a[LIM + 5], p[LIM + 5];
     int cnt = 0;
@@ -20,9 +21,11 @@ struct LB {
         for (int i = 1; i <= LIM; i++)
             a[i] = p[i] = 0;
     }
+
     inline bool getbit(ll x, int pos) {
         return (x >> (pos - 1)) & 1;
     }
+
     inline bool insert(ll x) {
         for (int i = LIM; i >= 1; i--)
             if (getbit(x, i)) {
@@ -36,11 +39,13 @@ struct LB {
 
         return false;
     }
+
     inline void merge(const LB &lb) {
         for (int i = 1; i <= LIM; i++)
             if (lb.a[i])
                 insert(lb.a[i]);
     }
+
     inline ll maxXor() {
         ll ans = 0;
 
@@ -49,6 +54,7 @@ struct LB {
 
         return ans;
     }
+
     inline ll minXor() {
         for (int i = 1; i <= LIM; i++)
             if (a[i])
@@ -56,6 +62,7 @@ struct LB {
 
         return 0;
     }
+
     inline void rebuild() {
         for (int i = LIM; i >= 1; i--)
             for (int j = i - 1; j >= 1; j--)
@@ -66,6 +73,7 @@ struct LB {
             if (a[i])
                 p[++cnt] = a[i];
     }
+
     inline ll KthSmall(ll k) {  // 先rebuild
         if (k >= (1LL << cnt) || k <= 0)
             return -1;

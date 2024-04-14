@@ -29,12 +29,14 @@ inline void init() {
         bl[q[i].l] = (q[i].l - 1) / block + 1;
     }
 }
+
 inline void add(int x) {
     up += cnt[a[x]];
     down += sum;
     cnt[a[x]]++;
     sum++;
 }
+
 inline void sub(int n) {
     cnt[a[n]]--;
     sum--;

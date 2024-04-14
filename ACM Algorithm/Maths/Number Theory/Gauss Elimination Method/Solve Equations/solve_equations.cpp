@@ -15,6 +15,7 @@ double ans[MAXN];
 inline bool equal(double x, double y) {
     return fabs(x - y) < eps;
 }
+
 inline bool gauss_kill() {
     //高斯消元计算 n 阶行列式的值
     double ans = 1.0;

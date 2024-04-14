@@ -18,16 +18,19 @@ struct Contor {
     inline int lowbit(int x) {
         return x & -x;
     }
+
     inline void add(int x, int k) {
         for (int i = x; i <= n; i += lowbit(i))
             delta[i] += k;
     }
+
     inline int ask(int x) {
         int sum = 0;
         for (int i = x; i; i -= lowbit(i))
             sum += delta[i];
         return sum;
     }
+
     inline void modify(int l, int r, int k) {
         add(l, k);
         add(r + 1, -k);

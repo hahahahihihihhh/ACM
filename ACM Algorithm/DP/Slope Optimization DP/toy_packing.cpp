@@ -17,9 +17,13 @@ ll L;
 ll dp[MAXN];
 
 inline ll sqr(ll x) { return x * x; }
+
 inline ll Y(int j) { return dp[j] + sqr(b[j]); }
+
 inline ll X(int j) { return b[j]; }
+
 inline ll k(int i) { return 2LL * a[i]; }
+
 inline ld slope(int i, int j) { return (ld) (Y(j) - Y(i)) / (X(j) - X(i)); }     // 斜率
 
 int Q[MAXN];

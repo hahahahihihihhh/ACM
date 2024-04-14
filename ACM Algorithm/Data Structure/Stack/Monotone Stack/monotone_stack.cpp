@@ -10,6 +10,7 @@ const int MAXN = 3000005;
 int a[MAXN];
 int f[MAXN];
 int stk[MAXN], cnt = 0;
+
 int main() {
     int n;
     cin >> n;

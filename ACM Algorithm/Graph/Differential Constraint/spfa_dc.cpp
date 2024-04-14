@@ -27,7 +27,7 @@ bool spfa(int st) {
         q.pop();
         inq[u] = 0;
 
-        for (auto [v, w] : G[u]) {
+        for (auto [v, w]: G[u]) {
             if (dist[v] > dist[u] + w) {
                 dist[v] = dist[u] + w;
 

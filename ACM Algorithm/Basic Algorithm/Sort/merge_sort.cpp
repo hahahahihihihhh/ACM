@@ -33,6 +33,7 @@ void merge_sort(int l, int r) {
         merge(l, mid, r);
     }
 }
+
 int main() {
     int n;
     cin >> n;

@@ -8,7 +8,8 @@ using namespace std;
 typedef long long ll;
 typedef pair<ll, ll> pll;
 const ll MOD = 1e9 + 7;
-// 裴蜀定理 : 设 a,b 是不全为 0 的整数，则存在整数 x,y 使得 ax + by = gcd(a,b) -> a,b 互质的充要条件是存在整数 x,y 使 ax+by=1 
+
+// 裴蜀定理 : 设 a,b 是不全为 0 的整数，则存在整数 x,y 使得 ax + by = gcd(a,b) -> a,b 互质的充要条件是存在整数 x,y 使 ax+by=1
 void exgcd(ll a, ll b, ll &d, ll &x, ll &y) {
     //  ax + by = gcd(a,b) x 最小的特解 x1,y1
     if (!b) {
@@ -22,6 +23,7 @@ void exgcd(ll a, ll b, ll &d, ll &x, ll &y) {
         y -= (a / b) * x;
     }
 }
+
 vector<pll> General_solution(ll a, ll b, int n) {
     // ax + by = gcd(a,b) 的前 n 个解
     ll d, x, y;

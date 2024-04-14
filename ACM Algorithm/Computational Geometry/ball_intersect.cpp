@@ -29,7 +29,7 @@ inline Ball getBall(Point A, Point B, ld k1) {
     ld B1 = (-2 * sqr(k1) * B.y + 2 * A.y) / (sqr(k1) - 1);
     ld C1 = (-2 * sqr(k1) * B.z + 2 * A.z) / (sqr(k1) - 1);
     ld D1 = (sqr(k1) * sqr(B.z) + sqr(k1) * sqr(B.x) + sqr(k1) * sqr(B.y) - sqr(A.x) - sqr(A.y) - sqr(A.z)) /
-        (sqr(k1) - 1);
+            (sqr(k1) - 1);
     Point p = {-A1 / 2, -B1 / 2, -C1 / 2};
     ld r = sqrt(-D1 + (sqr(A1) + sqr(B1) + sqr(C1)) / 4);
     return {p, r};

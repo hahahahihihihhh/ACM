@@ -17,9 +17,11 @@ struct DSU {
         for (int i = 1; i <= n; i++)
             fa[i] = i, rnk[i] = 0;
     }
+
     int tfind(int x) { // 路径压缩
         return fa[x] == x ? x : tfind(fa[x]);
     }
+
     void tunion(int x, int y) {
         int xf = tfind(x), yf = tfind(y);
 
@@ -34,6 +36,7 @@ struct DSU {
             }
         }
     }
+
     int tcount(int n) {
         int cnt = 0;
 

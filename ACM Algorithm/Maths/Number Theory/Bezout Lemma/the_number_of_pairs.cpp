@@ -13,6 +13,7 @@ const ll INF = 1e18;
 bool isnotprime[MAXN];
 ll cnt[MAXN];   // cnt[i] 表示 i 能分解成多少个不同的质数
 ll pow2[MAXN];
+
 inline void init() {// 线性筛
     pow2[0] = 1LL;
     for (int i = 1; i <= 30; i++) pow2[i] = pow2[i - 1] * 2LL;
@@ -41,7 +42,7 @@ inline void solve() {
         }
     }
     ll ans = 0;
-    for (auto gcd : v) {// 枚举 gcd
+    for (auto gcd: v) {// 枚举 gcd
         if ((x + d * gcd) % c != 0) continue;
         ll lcm = (x + d * gcd) / c;
         if (lcm % gcd != 0) continue;

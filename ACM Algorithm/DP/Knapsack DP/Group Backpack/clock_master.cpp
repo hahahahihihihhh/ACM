@@ -15,6 +15,7 @@ int isnotprime[MAXN];
 int cnt, prime[MAXN];
 ld dp[MAXN];
 ld LOG[MAXN];
+
 // 分组背包
 inline void init() {
     isnotprime[1] = 1;

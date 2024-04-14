@@ -23,15 +23,17 @@ struct SP {
         for (int i = 1; i <= n; i++)
             degree[i] = dp[i] = ww[i] = dfn[i] = low[i] = instack[i] = stk[i] = scc[i] = 0;
     }
+
     inline void add_edge(int u, int v) {
         mp[u].push_back(v);
     }
+
     void tarjan(int u) {
         low[u] = dfn[u] = ++tme;
         instack[u] = 1;
         stk[++tot] = u;
 
-        for (auto v : mp[u]) {
+        for (auto v: mp[u]) {
             if (!dfn[v]) {
                 tarjan(v);
                 low[u] = min(low[v], low[u]);
@@ -51,6 +53,7 @@ struct SP {
             } while (cur != u);
         }
     }
+
     void shrink_point() {
         for (int i = 1; i <= n; i++)
             if (!dfn[i])
@@ -59,7 +62,7 @@ struct SP {
         for (int i = 1; i <= n; i++) {
             int u = i;
 
-            for (auto v : mp[i]) {
+            for (auto v: mp[i]) {
                 if (scc[u] != scc[v]) {
                     newmp[scc[u]].push_back(scc[v]);
                     degree[scc[v]]++;
@@ -69,6 +72,7 @@ struct SP {
             ww[scc[u]] += w[u];
         }
     }
+
     int tpSort() {
         queue<int> q;
 
@@ -82,7 +86,7 @@ struct SP {
             int u = q.front();
             q.pop();
 
-            for (auto v : newmp[u]) {
+            for (auto v: newmp[u]) {
                 degree[v]--;
                 dp[v] = max(dp[v], dp[u] + ww[v]);
 

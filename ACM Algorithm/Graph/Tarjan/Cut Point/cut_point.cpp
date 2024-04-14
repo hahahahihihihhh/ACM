@@ -10,11 +10,12 @@ const int MAXN = 100005;
 int cut[MAXN], dfn[MAXN], low[MAXN];  // cut[i] == 1 , 是割点
 int tme, root;
 vector<int> mp[MAXN];
+
 void tarjan(int u, int fa) {
     low[u] = dfn[u] = ++tme;
     int flag = 0;
 
-    for (auto v : mp[u]) {
+    for (auto v: mp[u]) {
         if (v == fa)
             continue;
 

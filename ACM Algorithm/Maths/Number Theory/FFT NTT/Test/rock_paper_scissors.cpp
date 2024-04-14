@@ -11,15 +11,22 @@ const double PI = acos(-1);
 
 struct Complex { // 复数
     double x, y;
+
     Complex(double xx = 0, double yy = 0) { x = xx, y = yy; }
+
     Complex operator+(const Complex &xx) const { return Complex(x + xx.x, y + xx.y); }
+
     Complex operator-(const Complex &xx) const { return Complex(x - xx.x, y - xx.y); }
+
     Complex operator*(const Complex &xx) const { return Complex(x * xx.x - y * xx.y, x * xx.y + y * xx.x); }
 } A[MAXN], B[MAXN];
+
 string S, T;
 int n, m;
+
 struct FFT {
     int r[MAXN];
+
     inline void fft(Complex *A, int lim, int type) {// type = 1 : 傅利叶变换 ; type = -1 : 傅利叶逆变换
         for (int i = 0; i < lim; i++) if (i < r[i]) swap(A[i], A[r[i]]); // 初始状态
         for (int i = 1; i < lim; i <<= 1) {// 要被归并的区间长度
@@ -35,6 +42,7 @@ struct FFT {
         }
         return;
     }
+
     inline vector<int> poly_mul(Complex *A, Complex *B) {
         int lim = 1, l = 0;
         while (lim <= n + m) lim <<= 1, l++;
@@ -55,6 +63,7 @@ inline void init() {
 }
 
 int ans[MAXN];
+
 inline void cal1() {// 上 S 1 下 R 1
     for (int i = 0; i < n; i++) A[i].x = (S[i] == 'S');
     for (int i = 0; i < m; i++) B[i].x = (T[i] == 'R');

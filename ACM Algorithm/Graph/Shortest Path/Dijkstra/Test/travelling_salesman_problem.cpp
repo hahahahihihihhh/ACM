@@ -12,9 +12,11 @@ const ll INF = 1e18;
 #define closeSync ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
 
 pll cp[MAXN];
+
 struct E {
     int to;
     ll w;
+
     bool operator<(const E &x) const {
         return w > x.w;
     }

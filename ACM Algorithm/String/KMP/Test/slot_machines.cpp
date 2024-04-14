@@ -10,6 +10,7 @@ typedef pair<int, int> pii;
 const int MAXN = 1000005;
 
 int kmp[MAXN], a[MAXN];
+
 inline void solve() {
     int n;
     cin >> n;

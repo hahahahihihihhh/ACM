@@ -13,14 +13,21 @@ const int INF = 0x3f3f3f3f;
 
 struct Complex {
     double x, y;
+
     Complex(ld xx = 0, ld yy = 0) { x = xx, y = yy; }
+
     Complex operator+(const Complex &xx) const { return Complex(x + xx.x, y + xx.y); }
+
     Complex operator-(const Complex &xx) const { return Complex(x - xx.x, y - xx.y); }
+
     Complex operator*(const Complex &xx) const { return Complex(x * xx.x - y * xx.y, x * xx.y + y * xx.x); }
 } A[MAXN], B[MAXN];
+
 int n, m;
+
 struct FFT {
     int r[MAXN];
+
     inline void fft(Complex *A, int lim, int type) {
         for (int i = 0; i < lim; i++) if (i < r[i]) swap(A[i], A[r[i]]); // 重新安排顺序
         for (int i = 1; i < lim; i <<= 1) {// 要被合并的区间长度
@@ -36,6 +43,7 @@ struct FFT {
         }
         return;
     }
+
     inline vector<int> poly_mul(Complex *A, Complex *B) {
         int lim = 1, l = 0;
         while (lim <= n + m) lim <<= 1, l++;

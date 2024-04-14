@@ -25,6 +25,7 @@ struct KMP {
             kmp[i] = j;
         }
     }
+
     void kmpit(string txt, string pattern) {  // 匹配
         getkmp(pattern);
         int j = 0, lent = txt.size(), lenp = pattern.size();

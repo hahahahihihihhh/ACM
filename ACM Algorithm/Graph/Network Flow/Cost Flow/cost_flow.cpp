@@ -22,6 +22,7 @@ struct MCMF {
         ll cost;
         int nxt;
     } edge[MAXM << 1];
+
     void add_edge(int u, int v, ll f, ll c) {
         edge[++tot].to = v;
         edge[tot].flow = f;
@@ -29,10 +30,12 @@ struct MCMF {
         edge[tot].nxt = head[u];
         head[u] = tot;
     }
+
     void init(int _n, int _s, int _t) { //点数，边数，源点，汇点
         n = _n, s = _s, t = _t;
         maxFlow = minCost = 0LL;
     }
+
     bool spfa(int s, int t) {
         for (int i = 1; i <= n; i++)  //以cost为边权寻找最短增广路
             flow[i] = dis[i] = INF;
@@ -65,6 +68,7 @@ struct MCMF {
 
         return pre[t] != -1;
     }
+
     void dinic() {
         while (spfa(s, t)) {
             int now = t;

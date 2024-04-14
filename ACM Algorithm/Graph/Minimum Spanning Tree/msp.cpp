@@ -13,10 +13,12 @@ struct Kruskal {
     struct Edge {
         int u, v;
         ll w;
+
         bool operator<(const Edge &x) const {
             return w > x.w;
         }
     };
+
     int n;
     priority_queue<Edge> q;
     int fa[MAXN], rnk[MAXN];
@@ -28,9 +30,11 @@ struct Kruskal {
         for (int i = 1; i <= n; i++)
             fa[i] = i, rnk[i] = 0;
     }
+
     inline int tfind(int x) {
         return fa[x] = x == fa[x] ? x : tfind(fa[x]);
     }
+
     inline void tunion(int x, int y) {
         int xf = tfind(x), yf = tfind(y);
 
@@ -43,6 +47,7 @@ struct Kruskal {
             fa[yf] = xf;
         }
     }
+
     inline ll kruskal() {
         int cnt = 0;
         ll ans = 0;

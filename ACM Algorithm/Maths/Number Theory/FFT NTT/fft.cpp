@@ -10,22 +10,28 @@ const double PI = acos(-1);
 
 struct Complex { // 复数
     double x, y;
+
     Complex(double xx = 0, double yy = 0) {
         x = xx, y = yy;
     }
+
     Complex operator+(const Complex &xx) const {
         return Complex(x + xx.x, y + xx.y);
     }
+
     Complex operator-(const Complex &xx) const {
         return Complex(x - xx.x, y - xx.y);
     }
+
     Complex operator*(const Complex &xx) const {
         return Complex(x * xx.x - y * xx.y, x * xx.y + y * xx.x);
     }
 } A[MAXN], B[MAXN];
+
 int n, m;   // 多项式 A,B 的最高幂次
 struct FFT {
     int r[MAXN];
+
     inline void fft(Complex *A, int lim, int type) {
         // type = 1 : 傅利叶变换 ; type = -1 : 傅利叶逆变换
         for (int i = 0; i < lim; i++)
@@ -51,6 +57,7 @@ struct FFT {
 
         return;
     }
+
     inline vector<int> poly_mul(Complex *A, Complex *B) {
         int lim = 1, l = 0;
 
@@ -87,7 +94,7 @@ int main() {
 
     vector<int> ans = fff.poly_mul(A, B);
 
-    for (auto c : ans)
+    for (auto c: ans)
         cout << c << " ";
 
     cout << "\n";

@@ -16,7 +16,7 @@ vector<int> mp[MAXN];
 void tarjan(int u, int fa) {
     low[u] = dfn[u] = ++tme;
 
-    for (auto v : mp[u]) {
+    for (auto v: mp[u]) {
         if (v == fa)
             continue;
 
@@ -47,7 +47,7 @@ int main() {
         if (!dfn[i])
             tarjan(0, 0);
 
-    for (auto c : ans)
+    for (auto c: ans)
         cout << c.first << " " << c.second << "\n";
 
     return 0;

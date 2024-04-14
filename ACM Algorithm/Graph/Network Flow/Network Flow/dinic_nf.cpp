@@ -23,12 +23,14 @@ struct NF {
     void init(int _n, int _s, int _t) {  //初始化
         n = _n, s = _s, t = _t;
     }
+
     void add_edge(int u, int v, ll w) {  //加边
         edge[++tot].to = v;
         edge[tot].w = w;
         edge[tot].nxt = head[u];
         head[u] = tot;
     }
+
     bool bfs() {  //分层
         for (int i = 1; i <= n; i++)
             depth[i] = 0;
@@ -56,6 +58,7 @@ struct NF {
 
         return false;
     }
+
     ll dfs(int u, ll dist) { // dist: 该条路径当前最大允许流量
         if (u == t)
             return dist;  //到达汇点后，成功流出流量即是该条路径最大允许流量
@@ -81,6 +84,7 @@ struct NF {
 
         return sum;  //成功流出的流量总和
     }
+
     ll dinic() {
         ll ans = 0;
 

@@ -72,10 +72,10 @@ inline void insE(E eg) {
 
 inline void dij(int i) {
     if (!ep[i]) return;
-    for (auto c : v[i]) {
+    for (auto c: v[i]) {
         dis[c] = INF;
     }
-    for (auto c : e[i]) {
+    for (auto c: e[i]) {
         G[c.u].push_back({c.w, c.v});
         G[c.v].push_back({c.w, c.u});
     }
@@ -88,7 +88,7 @@ inline void dij(int i) {
         q.pop();
         if (vis[u]) continue;
         vis[u] = 1;
-        for (auto c : G[u]) {
+        for (auto c: G[u]) {
             int v = c.second;
             ll w = c.first;
             if (dis[v] > dis[u] + w) {
@@ -97,7 +97,7 @@ inline void dij(int i) {
             }
         }
     }
-    for (auto c : v[i]) {
+    for (auto c: v[i]) {
         mp[{st, c}] = dis[c];
         dis[c] = 0;
         vis[c] = 0;

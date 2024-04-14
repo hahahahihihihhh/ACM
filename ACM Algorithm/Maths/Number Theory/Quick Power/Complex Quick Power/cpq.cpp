@@ -10,13 +10,15 @@ const ll MOD = 998244353;
 
 struct Complex {
     ll a, b;   // a + bi
-    Complex operator*(const Complex &x)const {
-        return {a *x.a - b * x.b, a *x.b + b * x.a};
+    Complex operator*(const Complex &x) const {
+        return {a * x.a - b * x.b, a * x.b + b * x.a};
     }
-    Complex operator%(ll mod)const {
+
+    Complex operator%(ll mod) const {
         return {(a + mod) % mod, (b + mod) % mod};
     }
-    Complex operator+(const Complex &x)const {
+
+    Complex operator+(const Complex &x) const {
         return {a + x.a, b + x.b};
     }
 };

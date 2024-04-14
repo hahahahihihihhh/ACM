@@ -35,8 +35,8 @@ inline void bfs(int st, int ed) {// 双向 BFS
             continue;
         }
         for (int i = 0; i <= 'z' - 'a'; i++) {
-            for (auto uu : G[u][i]) {
-                for (auto vv : G[v][i]) {
+            for (auto uu: G[u][i]) {
+                for (auto vv: G[v][i]) {
                     if (vis[uu][vv] == 0) {
                         vis[uu][vv] = vis[vv][uu] = 1;
                         q.push({uu, vv, cur.stp + 2});

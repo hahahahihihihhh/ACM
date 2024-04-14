@@ -32,12 +32,14 @@ struct BM {
         for (int i = 1; i <= n + m + 2; i++)
             head[i] = 0;
     }
+
     void add_edge(int u, int v, int w) {
         edge[++tot].to = v;
         edge[tot].nxt = head[u];
         edge[tot].w = w;
         head[u] = tot;
     };
+
     void build() {  //建立超级源点以及超级汇点，进行连边
         s = n + m + 1;
         t = n + m + 2;
@@ -52,6 +54,7 @@ struct BM {
             add_edge(t, i, 0);
         }
     }
+
     bool bfs() {
         for (int i = 1; i <= n + m + 2; i++)
             depth[i] = 0;
@@ -79,6 +82,7 @@ struct BM {
 
         return false;
     }
+
     int dfs(int u, int contr) {
         if (u == t)
             return contr;
@@ -107,6 +111,7 @@ struct BM {
 
         return sum;
     }
+
     int dinic() {
         int ans = 0;
 
